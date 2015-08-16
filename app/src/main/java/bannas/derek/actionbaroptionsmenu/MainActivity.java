@@ -1,6 +1,7 @@
 package bannas.derek.actionbaroptionsmenu;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,11 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            DialogFragment myFragment = new MyDialogFragment();
+            myFragment.show(getFragmentManager(), "theDialog");
+            return true;
+        } else if (id == R.id.exit_app) {
+            finish();
             return true;
         }
 
